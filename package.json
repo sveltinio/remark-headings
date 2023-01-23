@@ -1,6 +1,6 @@
 {
 	"name": "@sveltinio/remark-headings",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"packageManager": "pnpm@7.25.1",
 	"description": "Extracts the headings tree from your markdown and add it to the frontmatter.",
 	"author": "sveltinio <dev@sveltin.io>",
