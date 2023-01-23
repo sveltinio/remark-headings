@@ -56,22 +56,27 @@ remark()
 // file.data.fm.headings
 [
    {
+      "id": "welcome-post",
       "depth": 1,
       "value": "Welcome Post",
       "children": [
          {
+            "id": "intro",
             "depth": 2,
             "value": "Intro"
          },
          {
+            "id": "roadmap",
             "depth": 2,
             "value": "Roadmap",
             "children": [
                {
+                  "id": "short-term",
                   "depth": 3,
                   "value": "Short-Term"
                },
                {
+                  "id": "long-term",
                   "depth": 3,
                   "value": "Long-Term"
                }

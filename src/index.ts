@@ -14,15 +14,21 @@ export default function headings() {
 	return async function transformer(tree: Root, vFile: any) {
 		const headings: Array<HeadingItem> = [];
 
+		const slugify = (value: string) =>
+			value
+				.toLowerCase()
+				.trim()
+				.replace(/[^\w\s-]/g, '')
+				.replace(/[\s_-]+/g, '-')
+				.replace(/^-+|-+$/g, '');
+
 		function getFlatHeadingsList(node: Heading) {
 			const h: HeadingItem = {
+				id: slugify(toString(node)),
 				depth: node.depth,
 				value: toString(node)
 			};
 
-			if (node.data && node.data.id != null) {
-				h.id = node.data.id.toString() || '';
-			}
 			headings.push(h);
 		}
 
