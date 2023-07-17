@@ -23,6 +23,7 @@
 	"dependencies": {
 		"@types/mdast": "^3.0.10",
 		"abstract-syntax-tree": "^2.20.6",
+		"github-slugger": "^2.0.0",
 		"mdast-util-to-string": "^3.1.0",
 		"unist-util-visit": "^4.1.1"
 	},

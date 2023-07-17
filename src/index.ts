@@ -1,5 +1,5 @@
 import type { Heading, Root } from 'mdast';
-
+import Slugger from "github-slugger";
 import { visit } from 'unist-util-visit';
 import { toString } from 'mdast-util-to-string';
 
@@ -13,18 +13,11 @@ export type HeadingItem = {
 export default function headings() {
 	return async function transformer(tree: Root, vFile: any) {
 		const headings: Array<HeadingItem> = [];
-
-		const slugify = (value: string) =>
-			value
-				.toLowerCase()
-				.trim()
-				.replace(/[^\w\s-]/g, '')
-				.replace(/[\s_-]+/g, '-')
-				.replace(/^-+|-+$/g, '');
+		const slugger = new Slugger();
 
 		function getFlatHeadingsList(node: Heading) {
 			const h: HeadingItem = {
-				id: slugify(toString(node)),
+				id: slugger.slug(toString(node)),
 				depth: node.depth,
 				value: toString(node)
 			};
