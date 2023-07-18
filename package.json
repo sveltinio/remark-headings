@@ -1,7 +1,8 @@
 {
 	"name": "@sveltinio/remark-headings",
 	"version": "1.0.1",
-	"packageManager": "pnpm@7.25.1",
+	"packageManager": "pnpm@8.6.8",
+	"type": "module",
 	"description": "Extracts the headings tree from your markdown and add it to the frontmatter.",
 	"author": "sveltinio <dev@sveltin.io>",
 	"license": "MIT",
@@ -21,21 +22,25 @@
 		"vFile"
 	],
 	"dependencies": {
-		"@types/mdast": "^3.0.10",
-		"abstract-syntax-tree": "^2.20.6",
+		"@types/mdast": "^4.0.0",
+		"abstract-syntax-tree": "^2.21.0",
 		"github-slugger": "^2.0.0",
-		"mdast-util-to-string": "^3.1.0",
-		"unist-util-visit": "^4.1.1"
+		"mdast-util-to-string": "^4.0.0",
+		"unist-util-visit": "^5.0.0"
 	},
 	"devDependencies": {
 		"@tsconfig/recommended": "^1.0.2",
-		"prettier": "^2.8.3",
-		"release-it": "^15.6.0",
-		"tsup": "^6.5.0",
-		"typescript": "^4.9.4"
+		"prettier": "^3.0.0",
+		"release-it": "^16.1.2",
+		"remark": "14.0.3",
+		"rimraf": "^5.0.1",
+		"tsup": "^7.1.0",
+		"typescript": "^5.1.6",
+		"vfile-reporter": "^8.0.0"
 	},
 	"scripts": {
 		"build": "tsup",
+		"clean": "rimraf dist",
 		"watch": "pnpm build -- --watch src",
 		"format": "prettier --plugin-search-dir=. --write .",
 		"prepublishOnly": "pnpm build",
