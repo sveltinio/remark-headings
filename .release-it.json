@@ -1,8 +1,51 @@
 {
 	"git": {
-		"commitMessage": "chore: release v${version}"
+		"commitMessage": "chore: release v${version}",
+		"changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs",
+		"requireCleanWorkingDir": false,
+		"addUntrackedFiles": false,
+		"commit": true,
+		"push": true,
+		"tagAnnotation": "Release v${version}",
+		"tagName": "v${version}"
+	},
+	"hooks": {
+		"after:bump": "npx auto-changelog -p"
 	},
 	"github": {
-		"release": true
+		"web": true,
+		"release": true,
+		"releaseName": "v${version}",
+		"autoGenerate": true
+	},
+	"plugins": {
+		"@release-it/conventional-changelog": {
+			"infile": "CHANGELOG.md",
+			"preset": {
+				"name": "conventionalcommits",
+				"types": [
+					{
+						"type": "chore",
+						"section": ":house_with_garden: Chore"
+					},
+					{
+						"type": "feat",
+						"section": ":rocket: Features"
+					},
+					{
+						"type": "fix",
+						"section": ":rescue_worker_helmet: Fixes"
+					},
+					{
+						"type": "ci",
+						"section": ":gear: CI"
+					},
+					{
+						"type": "docs",
+						"section": ":book: Docs"
+					}
+				]
+			}
+		}
 	}
 }
