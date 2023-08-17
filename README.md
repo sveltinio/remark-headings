@@ -2,6 +2,10 @@
     <h1>remark-headings</h1>
     &nbsp;
     <a href="https://www.npmjs.com/package/@sveltinio/remark-headings" target="_blank"><img src="https://img.shields.io/npm/v/@sveltinio/remark-headings.svg?style=flat" alt="sveltinio/remark-headings NPM version badge" /></a>
+    &nbsp;
+    <a href="https://github.com/sveltinio/remark-headings/blob/main/LICENSE" target="_blank">
+        <img src="https://img.shields.io/badge/license-mit-blue?style=flat&logo=none" alt="license" />
+    </a>
 </div>
 
 Extracts the headings tree from your markdown and add it to the frontmatter.
